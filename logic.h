@@ -2,6 +2,6 @@
 #define LOGIC_H
 
 int add(int a, int b);
-void resize_arr(int *arr);
+int resize_arr(int *arr, int size);
 
 #endif
