@@ -1,12 +1,28 @@
+#include "dynam_array.h"
 #include <stdio.h>
-#include "logic.h"
+#include <stdlib.h>
+#include <string.h>
+
+DynamArr create_dynam_arr() {
+    DynamArr d;
+    int arr[6] = {1,11,12,3,4,5};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    d.data = (int *)malloc(size*sizeof(int));
+    if (d.data == NULL){
+        perror("Failed to allocate new array.");
+    }
+
+    memcpy(d.data, arr, sizeof(arr));
+    // memcpy(d.data, arr, sizeof());
+    
+    // d.resize = resize_arr;
+    return d;
+}
 
 int main() {
-    int num1 = 10;
-    int num2 = 5;
+    DynamArr dr = create_dynam_arr();
 
-    int arr[5] = {1,11,3,4,5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    resize_arr(arr, size);
-    
+    for(int i=0; i<6; i++){
+        printf("Element %d\n", dr.data[i]);
+    }
 }

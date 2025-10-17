@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int add(int a, int b) {
-    return a + b;
-}
 
 int resize_arr(int *arr, int size) {
     int new_size = (size * 2);
